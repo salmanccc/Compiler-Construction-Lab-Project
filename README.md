@@ -458,3 +458,15 @@ This project is intended to integrate everything you have learned throughout the
 Plan your work, collaborate effectively, commit regularly, and write clean, maintainable code.
 
 Happy Coding!
+## Group Information
+
+Group Name: syntax-squad
+
+Members:
+- Salman Chowdhury
+- Ummay Habiba Mowrin
+- Rajiya Akther Shirina 
+
+Department: Computer Science and Engineering
+
+University: Metropolitan University
