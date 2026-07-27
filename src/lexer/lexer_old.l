@@ -10,37 +10,45 @@ FLOAT       {DIGIT}+"."{DIGIT}+
 
 %%
 
-"int"|"float"|"char"|"if"|"else"|"while"|"return"|"print" {
+"int"|"float"|"char"|"if"|"else"|"while"|"return"|"print"
+{
     printf("KEYWORD : %s\n", yytext);
 }
 
-{FLOAT} {
+{FLOAT}
+{
     printf("FLOAT : %s\n", yytext);
 }
 
-{INT} {
+{INT}
+{
     printf("INTEGER : %s\n", yytext);
 }
 
-{ID} {
+{ID}
+{
     printf("IDENTIFIER : %s\n", yytext);
 }
 
-"=="|"!="|"<="|">="|"="|"+"|"-"|"*"|"/"|"<"|">" {
+"=="|"!="|"<="|">="|"="|"+"|"-"|"*"|"/"|"<"|">"
+{
     printf("OPERATOR : %s\n", yytext);
 }
 
-";"|","|"("|")"|"{"|"}" {
+";"|","|"("|")"|"{"|"}"
+{
     printf("DELIMITER : %s\n", yytext);
 }
 
-"//".* {
+"//".*
+{
     printf("COMMENT : %s\n", yytext);
 }
 
-[ \t\r\n]+   ;
+[ \t\n]+    ;
 
-. {
+.
+{
     printf("LEXICAL ERROR : %s\n", yytext);
 }
 
