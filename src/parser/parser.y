@@ -1,6 +1,9 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include "../ast/ast.h"
+
+Node *root = NULL;
 
 int yylex(void);
 void yyerror(const char *s);
@@ -10,32 +13,32 @@ void yyerror(const char *s);
 
 %%
 
-program:
-      statements
+program
+    : statements
     ;
 
-statements:
-      statements statement
+statements
+    : statements statement
     | statement
     ;
 
-statement:
-      declaration ';'
+statement
+    : declaration ';'
     | assignment ';'
     | print_stmt ';'
     ;
 
-declaration:
-      INT ID
+declaration
+    : INT ID
     | FLOAT ID
     ;
 
-assignment:
-      ID '=' NUMBER
+assignment
+    : ID '=' NUMBER
     ;
 
-print_stmt:
-      PRINT '(' ID ')'
+print_stmt
+    : PRINT '(' ID ')'
     ;
 
 %%
