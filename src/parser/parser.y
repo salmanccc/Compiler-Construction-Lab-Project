@@ -12,11 +12,13 @@ void yyerror(const char *s);
 %token INT FLOAT ID NUMBER PRINT
 
 %%
-
 program
     : statements
+    {
+        root = createNode("PROGRAM");
+        printf("\nAST Root Created: %s\n", root->value);
+    }
     ;
-
 statements
     : statements statement
     | statement
@@ -27,20 +29,29 @@ statement
     | assignment ';'
     | print_stmt ';'
     ;
-
 declaration
     : INT ID
+    {
+        printf("AST Node Created: DECLARATION (int)\n");
+    }
     | FLOAT ID
+    {
+        printf("AST Node Created: DECLARATION (float)\n");
+    }
     ;
 
 assignment
     : ID '=' NUMBER
+    {
+        printf("AST Node Created: ASSIGNMENT\n");
+    }
     ;
-
 print_stmt
     : PRINT '(' ID ')'
+    {
+        printf("AST Node Created: PRINT\n");
+    }
     ;
-
 %%
 
 void yyerror(const char *s)

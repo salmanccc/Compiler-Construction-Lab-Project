@@ -60,3 +60,24 @@ cmake-build-*/
 # ==================================================
 .DS_Store
 Thumbs.db
+# ==================================================
+# Generated Files
+# ==================================================
+lex.yy.c
+parser.tab.c
+parser.tab.h
+
+# Executables
+lexer
+parser
+codegen
+symbol_table
+semantic
+tac
+ast
+
+# Object Files
+*.o
+
+# Backup Files
+*~
