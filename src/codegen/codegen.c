@@ -1,3 +1,4 @@
+//updated
 #include <stdio.h>
 
 void generateAssignment(char var[], int value)
