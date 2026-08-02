@@ -24,3 +24,49 @@ void preorder(Node* root)
     preorder(root->left);
     preorder(root->right);
 }
+void inorder(Node* root)
+{
+    if(root == NULL)
+        return;
+
+    inorder(root->left);
+    printf("%s ", root->value);
+    inorder(root->right);
+}
+
+void postorder(Node* root)
+{
+    if(root == NULL)
+        return;
+
+    postorder(root->left);
+    postorder(root->right);
+    printf("%s ", root->value);
+}
+
+int main()
+{
+    Node *assign = createNode("=");
+    Node *a = createNode("a");
+    Node *plus = createNode("+");
+    Node *b = createNode("b");
+    Node *c = createNode("c");
+
+    assign->left = a;
+    assign->right = plus;
+    plus->left = b;
+    plus->right = c;
+
+    printf("Preorder : ");
+    preorder(assign);
+
+    printf("\nInorder : ");
+    inorder(assign);
+
+    printf("\nPostorder : ");
+    postorder(assign);
+
+    printf("\n");
+
+    return 0;
+}
